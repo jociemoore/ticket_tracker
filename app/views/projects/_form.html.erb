@@ -1,0 +1,12 @@
+<%= form_for @project do |f| %>
+  <div>
+    <strong><%= f.label :name %></strong>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <strong><%= f.label :description %></strong>
+    <%= f.text_area :description, rows: 5 %>
+  </div>
+  <%= f.submit (@project.new_record? ? 'Create Project' : 'Update Project'), class: 'btn' %>
+<% end %>
+<%= link_to 'Back', :back %>

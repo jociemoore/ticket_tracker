@@ -9,7 +9,100 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
+
+/* General Styles */
+
+body {
+  margin: 5px 30px;
+}
+
+table,
+label,
+input,
+textarea,
+h2,
+p,
+a {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  color: #1565c0;
+}
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+
+
+/* Nav Styles */
+
+header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+header li {
+  margin-left: 5px;
+}
+
+
+
+/* Table Styles */
+
+table {
+  margin: 30px 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  padding: 10px 0;
+  width: 30%;
+}
+
+th ~ th,
+td ~ td {
+  text-align: center;
+}
+
+
+
+/* Form Styles */
+
+form div {
+  margin: 20px 0;
+}
+
+form div input,
+textarea {
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 2px 1px #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.btn {
+  border-radius: 3px;
+  color: #fff;
+  background-color: #1565c0;
+  padding: 10px 25px;
+  border: none;
+  line-height: normal;
+  font-weight: bold;
+}

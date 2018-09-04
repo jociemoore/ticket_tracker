@@ -1,0 +1,6 @@
+<%= stylesheet_link_tag params[:controller] %>
+<%= render 'shared/content_title', title: @project.name %>
+
+<p><%= @project.description %></p>
+<%= link_to 'Edit', edit_project_path %>
+<%= link_to 'Delete', project_path, method: :delete, data: {confirm: 'Are you sure?'} %>

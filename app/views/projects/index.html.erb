@@ -1,0 +1,17 @@
+<%= render 'shared/content_title', title: 'Projects' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Open Tickets</th>
+      <th>Total Tickets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <%= render 'project', project: project %>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Project', new_project_path %>
