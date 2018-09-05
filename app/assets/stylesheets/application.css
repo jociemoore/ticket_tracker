@@ -23,7 +23,8 @@ input,
 textarea,
 h2,
 p,
-a {
+a,
+.alert {
   font-family: Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -105,4 +106,25 @@ label {
   border: none;
   line-height: normal;
   font-weight: bold;
+}
+
+
+
+/* Message Styles */
+
+.alert {
+  margin: 20px 0;
+}
+
+.alert li {
+  list-style: square;
+  margin-left: 32px;
+}
+
+.alert-success {
+  color: #00806f;
+}
+
+.alert-error {
+  color: #cc0000;
 }
