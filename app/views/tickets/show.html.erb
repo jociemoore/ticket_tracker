@@ -1,0 +1,26 @@
+<%= render 'shared/view_specific_styles', view: 'ticket' %>
+<%= render 'shared/content_title', title: @ticket.name %>
+
+<p><%= @ticket.body %></p>
+<p>
+  <strong>Tags:</strong>
+  <!-- TODO: make dynamic -->
+  Roads
+</p>
+<%= link_to 'Edit', edit_ticket_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Creator</th>
+      <th>Assignee</th>
+    </tr>
+  </thead>
+  <tbody>
+    <td><%= @ticket.status %></td>
+    <td>Jane</td>
+    <td>Bob</td>
+  </tbody>
+</table>
+<!-- TODO: add comments -->

@@ -1,0 +1,22 @@
+<%= render 'shared/errors', obj: @ticket %>
+<%= form_for @ticket do |f| %>
+  <div>
+    <strong><%= f.label :project %></strong>
+    <%= f.collection_select(:project_id, Project.all, :id, :name) %>
+  </div>
+  <div>
+    <strong><%= f.label :name %></strong>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <strong><%= f.label :body %></strong>
+    <%= f.text_area :body, rows: 5 %>
+  </div>
+  <div>
+    <strong><%= f.label :status %></strong>
+    <%= f.select(:status, ['new', 'blocked', 'in_progress', 'fixed']) %>
+  </div>
+  <!-- TODO: add assignee select -->
+  <!-- TODO: add tags multiple select -->
+  <%= f.submit (@ticket.new_record? ? 'Create Ticket' : 'Update Ticket'), class: 'btn' %>
+<% end %>

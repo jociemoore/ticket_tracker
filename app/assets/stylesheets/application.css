@@ -9,7 +9,7 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- */
+*/
 
 /* General Styles */
 
@@ -21,6 +21,7 @@ table,
 label,
 input,
 textarea,
+select,
 h2,
 p,
 a,
@@ -49,6 +50,11 @@ header {
   margin-bottom: 20px;
 }
 
+header ul {
+  display: flex;
+  flex-direction: row;
+}
+
 header li {
   margin-left: 5px;
 }
@@ -75,7 +81,6 @@ th ~ th,
 td ~ td {
   text-align: center;
 }
-
 
 
 /* Form Styles */

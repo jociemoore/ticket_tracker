@@ -1,0 +1,9 @@
+td,
+th {
+  width: 20%;
+}
+
+th ~ th,
+td ~ td {
+  text-align: left;
+}
