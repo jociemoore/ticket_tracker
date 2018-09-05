@@ -1,12 +1,13 @@
-<%= render 'shared/view_specific_styles', view: 'project'%>
-<%= render 'shared/content_title', title: @project.name %>
+<div id='project-wrapper'>
+  <%= render 'shared/content_title', title: @project.name %>
 
-<p><%= @project.description %></p>
+  <p><%= @project.description %></p>
 
-<div class="btn-group">
-  <%= link_to 'Edit', edit_project_path %>
-  <%= link_to 'Delete', project_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+  <div class="btn-group">
+    <%= link_to 'Edit', edit_project_path %>
+    <%= link_to 'Delete', project_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
+
+  <%= render 'shared/content_title', title: 'Tickets' %>
+  <%= render 'tickets/ticket_table', tickets: @project.tickets %>
 </div>
-
-<%= render 'shared/content_title', title: 'Tickets' %>
-<%= render 'tickets/ticket_table', tickets: @project.tickets %>

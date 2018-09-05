@@ -1,17 +1,19 @@
-<%= render 'shared/content_title', title: 'Projects' %>
+<div id='projects-wrapper'>
+  <%= render 'shared/content_title', title: 'Projects' %>
 
-<table id="projects-data">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Open Tickets</th>
-      <th>Total Tickets</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @projects.each do |project| %>
-      <%= render 'project', project: project %>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New Project', new_project_path %>
+  <table id="projects-data">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Open Tickets</th>
+        <th>Total Tickets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projects.each do |project| %>
+        <%= render 'project', project: project %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Project', new_project_path %>
+</div>

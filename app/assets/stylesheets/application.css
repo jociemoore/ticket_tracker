@@ -77,10 +77,6 @@ th {
   width: 30%;
 }
 
-th ~ th,
-td ~ td {
-  text-align: center;
-}
 
 
 /* Form Styles */
@@ -132,4 +128,30 @@ label {
 
 .alert-error {
   color: #cc0000;
+}
+
+
+/* View Specific Styles */
+
+#ticket-wrapper p,
+#project-wrapper p,
+.btn-group {
+  margin: 20px 0;
+}
+
+#projects-wrapper th ~ th,
+#projects-wrapper td ~ td {
+  text-align: center;
+}
+
+#project-wrapper td,
+#project-wrapper th,
+#tickets-wrapper td,
+#tickets-wrapper th {
+  width: 20%;
+}
+
+#tickets-wrapper th ~ th,
+#tickets-wrapper td ~ td {
+  text-align: left;
 }

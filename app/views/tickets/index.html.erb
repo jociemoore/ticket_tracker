@@ -1,4 +1,5 @@
-<%= render 'shared/view_specific_styles', view: 'tickets' %>
-<%= render 'shared/content_title', title: 'Tickets' %>
-<%= render 'ticket_table', tickets: @tickets %>
-<%= link_to 'New Ticket', new_ticket_path %>
+<div id='tickets-wrapper'>
+  <%= render 'shared/content_title', title: 'Tickets' %>
+  <%= render 'ticket_table', tickets: @tickets %>
+  <%= link_to 'New Ticket', new_ticket_path %>
+</div>
