@@ -3,9 +3,8 @@
 
   <p><%= @ticket.body %></p>
   <p>
-    <strong>Tags:</strong>
-    <!-- TODO: make dynamic -->
-    Roads
+    <strong>Tags: </strong>
+    <%= get_tags(@ticket) %>
   </p>
   <%= link_to 'Edit', edit_ticket_path %>
 

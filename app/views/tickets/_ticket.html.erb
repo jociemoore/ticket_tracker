@@ -2,8 +2,7 @@
 <!-- TODO: make dynamic -->
 <td>Bob</td>
 <td><%= ticket.status %></td>
-<!-- TODO: make dynamic -->
-<td>Roads</td>
+<td><%= get_tags(ticket) %></td>
 <td>
   <%= link_to 'Edit', edit_ticket_path(ticket.id) %>
   <%= link_to 'Destroy', ticket_path(ticket), method: :delete, data: {confirm: 'Are you sure?'} %>

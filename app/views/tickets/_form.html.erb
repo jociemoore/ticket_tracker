@@ -17,6 +17,9 @@
     <%= f.select(:status, ['new', 'blocked', 'in_progress', 'fixed']) %>
   </div>
   <!-- TODO: add assignee select -->
-  <!-- TODO: add tags multiple select -->
+  <div>
+    <strong><%= f.label :tags %></strong>
+    <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {multiple: true}) %>
+  </div>
   <%= f.submit (@ticket.new_record? ? 'Create Ticket' : 'Update Ticket'), class: 'btn' %>
 <% end %>
