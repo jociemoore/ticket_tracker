@@ -131,6 +131,7 @@ label {
 }
 
 
+
 /* View Specific Styles */
 
 #ticket-wrapper p,
@@ -154,4 +155,9 @@ label {
 #tickets-wrapper th ~ th,
 #tickets-wrapper td ~ td {
   text-align: left;
+}
+
+#tags-wrapper th:nth-of-type(2),
+#tags-wrapper td:nth-of-type(2) {
+  text-align: center;
 }

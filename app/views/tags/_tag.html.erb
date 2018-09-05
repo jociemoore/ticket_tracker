@@ -1,0 +1,8 @@
+<td><%= tag.name %></td>
+<!-- TODO: make dynamic -->
+<td>1</td>
+<td>
+  <%= link_to 'Edit', edit_tag_path(tag) %>
+  or
+  <%= link_to 'Destroy', tag_path(tag), method: :delete, data: {confirm: 'Are you sure?'} %>
+</td>
