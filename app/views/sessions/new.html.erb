@@ -1,0 +1,13 @@
+<%= render 'shared/content_title', title: 'Login' %>
+
+<%= form_tag do %>
+  <div>
+    <%= label_tag :email %>
+    <%= email_field :user, :email %>
+  </div>
+  <div>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <%= submit_tag 'Login', class: 'btn' %>
+<% end %>
