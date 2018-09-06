@@ -22,6 +22,7 @@ label,
 input,
 textarea,
 select,
+span,
 li,
 h2,
 p,
@@ -39,6 +40,11 @@ a {
 h1 {
   font-family: Helvetica, sans-serif;
   font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.btn-group {
+  margin-bottom: 15px;
 }
 
 
@@ -101,6 +107,7 @@ textarea {
 label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .btn {
@@ -139,9 +146,8 @@ label {
 /* View Specific Styles */
 
 #ticket-wrapper p,
-#project-wrapper p,
-.btn-group {
-  margin: 20px 0;
+#project-wrapper p {
+  margin-bottom: 15px;
 }
 
 #projects-wrapper th ~ th,
@@ -164,4 +170,8 @@ label {
 #tags-wrapper th:nth-of-type(2),
 #tags-wrapper td:nth-of-type(2) {
   text-align: center;
+}
+
+.comment {
+  margin-bottom: 30px;
 }

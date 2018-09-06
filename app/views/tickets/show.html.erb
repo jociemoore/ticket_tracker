@@ -22,5 +22,10 @@
       <td><%= @ticket.assignee.name %></td>
     </tbody>
   </table>
-  <!-- TODO: add comments -->
+
+  <%= render 'shared/content_title', title: 'Comments' %>
+  <% @ticket.comments.each do |comment| %>
+    <%= render 'comments/comment', comment: comment %>
+  <% end %>
+  <%= render 'comments/form' %>
 </div>

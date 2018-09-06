@@ -6,7 +6,9 @@ class TicketsController < ApplicationController
     @tickets = Ticket.all
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+  end
 
   def new
     @ticket = Ticket.new
