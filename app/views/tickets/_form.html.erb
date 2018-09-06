@@ -1,27 +1,27 @@
 <%= render 'shared/errors', obj: @ticket %>
 <%= form_for @ticket do |f| %>
   <div>
-    <strong><%= f.label :project %></strong>
+    <%= f.label :project %>
     <%= f.collection_select(:project_id, Project.all, :id, :name) %>
   </div>
   <div>
-    <strong><%= f.label :name %></strong>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div>
-    <strong><%= f.label :body %></strong>
+    <%= f.label :body %>
     <%= f.text_area :body, rows: 5 %>
   </div>
   <div>
-    <strong><%= f.label :status %></strong>
+    <%= f.label :status %>
     <%= f.select(:status, ['new', 'blocked', 'in_progress', 'fixed']) %>
   </div>
   <div>
-    <strong><%= f.label :assignee %></strong>
+    <%= f.label :assignee %>
     <%= f.collection_select(:assignee, User.all, :id, :name, {selected: @ticket.assignee.id}) %>
   </div>
   <div>
-    <strong><%= f.label :tags %></strong>
+    <%= f.label :tags %>
     <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {multiple: true}) %>
   </div>
   <%= f.submit (@ticket.new_record? ? 'Create Ticket' : 'Update Ticket'), class: 'btn' %>
