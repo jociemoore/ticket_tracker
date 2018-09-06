@@ -18,7 +18,7 @@
   </div>
   <div>
     <%= f.label :assignee %>
-    <%= f.collection_select(:assignee, User.all, :id, :name, {selected: @ticket.assignee.id}) %>
+    <%= f.collection_select(:assignee, User.all, :id, :name, {selected: (@ticket.assignee.id if @ticket.assignee)}) %>
   </div>
   <div>
     <%= f.label :tags %>
