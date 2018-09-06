@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  before_action :set_tag, only: [:edit, :update, :destroy]
+
   def index
     @tags = Tag.all
   end
@@ -8,9 +10,9 @@ class TagsController < ApplicationController
   end
 
   def create
-    tag = Tag.new(tag_params)
+    @tag = Tag.new(tag_params)
 
-    if tag.save
+    if @tag.save
       flash["notice"] = "Tag was successfully created."
       redirect_to tags_path
     else
@@ -18,14 +20,10 @@ class TagsController < ApplicationController
     end
   end
 
-  def edit
-    @tag = Tag.find(params[:id])
-  end
+  def edit; end
 
   def update
-    tag = Tag.find(params[:id])
-
-    if tag.update(tag_params)
+    if @tag.update(tag_params)
         flash["notice"] = "Tag was successfully updated."
         redirect_to tags_path
     else
@@ -34,9 +32,7 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    tag = Tag.find(params[:id])
-
-    if tag.destroy
+    if @tag.destroy
       flash["notice"] = "Tag was successfully destroyed."
       redirect_to tags_path
     else
@@ -49,5 +45,9 @@ class TagsController < ApplicationController
 
   def tag_params
     params.require(:tag).permit(:name)
+  end
+
+  def set_tag
+    @tag = Tag.find(params[:id])
   end
 end
