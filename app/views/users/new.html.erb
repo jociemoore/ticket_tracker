@@ -1,0 +1,22 @@
+<%= render 'shared/content_title', title: 'Sign Up' %>
+<%= render 'shared/errors', obj: @user %>
+
+<%= form_for @user do |f| %>
+  <div>
+    <strong><%= f.label :name %></strong>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <strong><%= f.label :email %></strong>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <strong><%= f.label :password %></strong>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <strong><%= f.label :password_confirmation %></strong>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <%= f.submit 'Create Account', class: 'btn' %>
+<% end %>
