@@ -4,7 +4,7 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-  <%= f.submit (@tag.new_record? ? 'Create Tag' : 'Update Tag'), class: 'btn' %>
+  <%= f.submit (@tag.new_record? ? 'Create Tag' : 'Update Tag') %>
 <% end %>
 
 <% if @tag.new_record? %>
