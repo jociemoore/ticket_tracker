@@ -14,6 +14,8 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
+    @ticket.creator = current_user
+    @ticket.assignee = User.find(params[:ticket][:assignee])
 
     if @ticket.save
       flash["notice"] = "Ticket was successfully created."
@@ -26,6 +28,8 @@ class TicketsController < ApplicationController
   def edit; end
 
   def update
+    @ticket.assignee = User.find(params[:ticket][:assignee])
+
     if @ticket.update(ticket_params)
       flash["notice"] = "Ticket was successfully updated."
       redirect_to ticket_path(@ticket)

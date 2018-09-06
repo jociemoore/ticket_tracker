@@ -18,8 +18,8 @@
     </thead>
     <tbody>
       <td><%= @ticket.status %></td>
-      <td>Jane</td>
-      <td>Bob</td>
+      <td><%= @ticket.creator.name %></td>
+      <td><%= @ticket.assignee.name %></td>
     </tbody>
   </table>
   <!-- TODO: add comments -->

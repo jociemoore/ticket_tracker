@@ -6,9 +6,13 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    if !current_user
+    if !logged_in?
       flash["error"] = "You must be logged in to do that."
       redirect_back fallback_location: root_path
     end
+  end
+
+  def logged_in?
+    !!current_user
   end
 end

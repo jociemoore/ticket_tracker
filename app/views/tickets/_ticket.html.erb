@@ -1,6 +1,5 @@
 <td><%= link_to ticket.name, ticket_path(ticket.id) %></td>
-<!-- TODO: make dynamic -->
-<td>Bob</td>
+<td><%= ticket.assignee.name %></td>
 <td><%= ticket.status %></td>
 <td><%= get_tags(ticket) %></td>
 <td>

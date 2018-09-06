@@ -16,7 +16,10 @@
     <strong><%= f.label :status %></strong>
     <%= f.select(:status, ['new', 'blocked', 'in_progress', 'fixed']) %>
   </div>
-  <!-- TODO: add assignee select -->
+  <div>
+    <strong><%= f.label :assignee %></strong>
+    <%= f.collection_select(:assignee, User.all, :id, :name, {selected: @ticket.assignee.id}) %>
+  </div>
   <div>
     <strong><%= f.label :tags %></strong>
     <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {multiple: true}) %>
