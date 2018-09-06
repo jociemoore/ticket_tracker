@@ -1,5 +1,24 @@
 <div id='tickets-wrapper'>
   <%= render 'shared/content_title', title: 'Tickets' %>
+
+  <%= form_tag('/tickets', method: 'get') do %>
+    <span>Show tickets from </span>
+
+    <%= collection_select('', :project, Project.all, :id, :name, {include_blank: 'All Projects', selected: @project})%>
+
+    <span> with status </span>
+
+    <%= select('', :status, %w(new blocked in_progress fixed), {include_blank: 'Any Status', selected: @status})%>
+
+    <span> tagged </span>
+
+    <%= collection_select('', :tag, Tag.all, :id, :name, {include_blank: '-', selected: @tag})%>
+
+    <%= submit_tag 'Update', name: '' %>
+    
+    <%= link_to 'Clear Filters', tickets_path %>
+  <% end %>
+
   <%= render 'ticket_table', tickets: @tickets %>
   <%= link_to 'New Ticket', new_ticket_path %>
 </div>

@@ -167,6 +167,15 @@ input[type='submit'] {
   text-align: left;
 }
 
+#tickets-wrapper form input[type='submit'] {
+  font-size: 12px;
+  padding: 5px 15px;
+}
+
+#tickets-wrapper form a {
+  font-size: 12px;
+}
+
 #tags-wrapper th:nth-of-type(2),
 #tags-wrapper td:nth-of-type(2) {
   text-align: center;

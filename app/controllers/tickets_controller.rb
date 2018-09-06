@@ -3,7 +3,10 @@ class TicketsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.filter_tickets(params)
+    @project = params[:project]
+    @status = params[:status]
+    @tag = params[:tag]
   end
 
   def show
