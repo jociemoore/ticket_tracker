@@ -1,6 +1,5 @@
 <td><%= tag.name %></td>
-<!-- TODO: make dynamic -->
-<td>1</td>
+<td><%= link_to tag.tickets.size, tickets_path(tag: tag.id) %></td>
 <td>
   <%= link_to 'Edit', edit_tag_path(tag) %>
   or
