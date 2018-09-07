@@ -4,7 +4,7 @@ This is an application for managing projects. Users can login, create projects, 
 
 
 
-To run the application locally:
+### To run the application locally:
 
 1. Make sure you have a local postgreSQL database installed and running. To install using Homebrew, run `brew install postgres`. If you do not have `brew services` already installed, use `brew tap homebrew/services` to do so. Finally, start postgreSQL using `brew services start postgresql`.
 
