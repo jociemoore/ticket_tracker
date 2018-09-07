@@ -1,6 +1,6 @@
 <% if obj.errors.any? %>
   <div class="alert alert-error">
-    <h1><%= get_error_status_statement(obj) %></h1>
+    <h1><%= error_status_statement(obj) %></h1>
     <ul>
       <% obj.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

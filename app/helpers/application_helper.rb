@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def get_tags(ticket)
-    ticket.tags.join(", ")
+  def tags(ticket)
+    ticket.tags.empty? ? '-' : ticket.tags.join(", ")
   end
 
-  def get_error_status_statement(obj)
+  def error_status_statement(obj)
     count = obj.errors.size
     item = obj.class.name.downcase
 

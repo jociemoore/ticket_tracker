@@ -4,7 +4,7 @@
   <p><%= @ticket.body %></p>
   <p>
     <strong>Tags: </strong>
-    <%= get_tags(@ticket) %>
+    <%= tags(@ticket) %>
   </p>
   <%= link_to 'Edit', edit_ticket_path %>
 
@@ -19,13 +19,19 @@
     <tbody>
       <td><%= @ticket.status %></td>
       <td><%= @ticket.creator.name %></td>
-      <td><%= @ticket.assignee.name %></td>
+      <td><%= (@ticket.assignee ? @ticket.assignee.name : '-') %></td>
     </tbody>
   </table>
 
   <%= render 'shared/content_title', title: 'Comments' %>
-  <% @ticket.comments.each do |comment| %>
-    <%= render 'comments/comment', comment: comment %>
+
+  <% if @ticket.comments.empty? %>
+    <p>There are no comments.</p>
+  <% else %>
+    <% @ticket.comments.each do |comment| %>
+      <%= render 'comments/comment', comment: comment %>
+    <% end %>
   <% end %>
+
   <%= render 'comments/form' %>
 </div>
