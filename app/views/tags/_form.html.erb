@@ -1,4 +1,5 @@
 <%= render 'shared/errors', obj: @tag %>
+
 <%= form_for @tag do |f| %>
   <div>
     <%= f.label :name, class: (error_field?(:name, @tag) ? 'alert-error' : '') %>

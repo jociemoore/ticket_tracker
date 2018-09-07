@@ -17,7 +17,7 @@
       </thead>
       <tbody>
         <% @projects.each do |project| %>
-          <%= render 'project', project: project %>
+          <tr><%= render 'project', project: project %></tr>
         <% end %>
       </tbody>
     </table>
