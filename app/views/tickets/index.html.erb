@@ -23,6 +23,14 @@
 
   <!-- End -->
 
-  <%= render 'ticket_table', tickets: @tickets %>
+  <% if !@tickets.empty? %>
+    <%= render 'ticket_table', tickets: @tickets %>
+  <% else %>
+    <p><em>
+      There are no tickets matching the selected filters.
+      <%= link_to "Clear filters and show all tickets", tickets_path %>
+    </em></p>
+  <% end %>
+
   <%= link_to 'New Ticket', new_ticket_path %>
 </div>

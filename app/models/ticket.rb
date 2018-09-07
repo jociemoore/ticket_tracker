@@ -10,26 +10,26 @@ class Ticket < ActiveRecord::Base
   validates :status, inclusion: { in: %w(new blocked in_progress fixed) }
 
   def self.filter_tickets(params)
-    @tickets = Ticket.all
+    tickets = Ticket.all
 
     if params[:project] && !params[:project].empty?
-      @tickets = @tickets.select do |ticket|
+      tickets = tickets.select do |ticket|
         ticket[:project_id] == params[:project].to_i
       end
     end
 
     if params[:status] && !params[:status].empty?
-      @tickets = @tickets.select do |ticket|
+      tickets = tickets.select do |ticket|
         ticket[:status] == params[:status]
       end
     end
 
     if params[:tag] && !params[:tag].empty?
-      @tickets = @tickets.select do |ticket|
+      tickets = tickets.select do |ticket|
         ticket.tag_ids.include?(params[:tag].to_i)
       end
     end
 
-    @tickets
+    tickets
   end
 end

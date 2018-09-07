@@ -145,6 +145,8 @@ input[type='submit'] {
 
 /* View Specific Styles */
 
+#tickets-wrapper form,
+#tickets-wrapper p,
 #ticket-wrapper p,
 #project-wrapper p {
   margin-bottom: 15px;
