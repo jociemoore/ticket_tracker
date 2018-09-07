@@ -22,7 +22,7 @@
   </div>
   <div>
     <%= f.label :tags %>
-    <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {multiple: true}) %>
+    <%= f.collection_select(:tag_ids, Tag.all_sorted, :id, :name, {}, {multiple: true}) %>
   </div>
   <%= f.submit (@ticket.new_record? ? 'Create Ticket' : 'Update Ticket') %>
 <% end %>

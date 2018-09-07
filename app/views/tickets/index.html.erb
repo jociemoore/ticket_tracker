@@ -14,7 +14,7 @@
 
     <span> tagged </span>
 
-    <%= collection_select('', :tag, Tag.all, :id, :name, {include_blank: '-', selected: @tag})%>
+    <%= collection_select('', :tag, Tag.all_sorted, :id, :name, {include_blank: '-', selected: @tag})%>
 
     <%= submit_tag 'Update', name: '' %>
 

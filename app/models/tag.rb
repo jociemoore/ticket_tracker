@@ -4,8 +4,12 @@ class Tag < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
-  def self.ticket_totals
+  def self.all_ticket_totals
     TicketTag.group(:tag_id).count
+  end
+
+  def self.all_sorted
+    Tag.all.sort_by { |tag| tag.name }
   end
 
   def to_s

@@ -9,7 +9,7 @@ class Ticket < ActiveRecord::Base
   validates :name, presence: true
   validates :status, inclusion: { in: %w(new blocked in_progress fixed) }
 
-  def self.filter_tickets(params)
+  def self.filter_all(params)
     tickets = Ticket.all
 
     if params[:project] && !params[:project].empty?

@@ -3,8 +3,8 @@ class TagsController < ApplicationController
   before_action :require_login, except: [:index]
 
   def index
-    @tags = Tag.all
-    @ticket_totals = Tag.ticket_totals
+    @tags = Tag.all_sorted
+    @ticket_totals = Tag.all_ticket_totals
   end
 
   def new
