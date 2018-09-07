@@ -145,10 +145,12 @@ input[type='submit'] {
 
 /* View Specific Styles */
 
-#tickets-wrapper form,
-#tickets-wrapper p,
 #ticket-wrapper p,
-#project-wrapper p {
+#project-wrapper p,
+#tags-wrapper p,
+#tickets-wrapper p,
+#projects-wrapper p,
+#tickets-wrapper form {
   margin-bottom: 15px;
 }
 

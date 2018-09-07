@@ -1,20 +1,24 @@
 <div id='tags-wrapper'>
   <%= render 'shared/content_title', title: 'Tags' %>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Tickets</th>
-        <th> </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @tags.each do |tag| %>
-        <tr><%= render 'tag', tag: tag %></tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+  <% if @tags.empty? %>
+    <p><em>There are no tags! <%= link_to "Add one now?", new_tag_path %></em></p>
+  <% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Tickets</th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tags.each do |tag| %>
+          <tr><%= render 'tag', tag: tag %></tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 
-<%= link_to 'New Tag', new_tag_path %>
+  <%= link_to 'New Tag', new_tag_path %>
+</div>

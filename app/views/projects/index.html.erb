@@ -1,19 +1,27 @@
 <div id='projects-wrapper'>
   <%= render 'shared/content_title', title: 'Projects' %>
 
-  <table id="projects-data">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Open Tickets</th>
-        <th>Total Tickets</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @projects.each do |project| %>
-        <%= render 'project', project: project %>
-      <% end %>
-    </tbody>
-  </table>
+  <% if @projects.empty? %>
+    <p><em>
+      There are no projects!
+      <%= link_to "Add one now?", new_project_path %>
+    </em></p>
+  <% else %>
+    <table id="projects-data">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Open Tickets</th>
+          <th>Total Tickets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @projects.each do |project| %>
+          <%= render 'project', project: project %>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
   <%= link_to 'New Project', new_project_path %>
 </div>
