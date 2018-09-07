@@ -4,6 +4,10 @@
     <%= f.label :body, "Add a comment" %>
     <%= f.text_area :body, rows: 5 %>
   </div>
+  <div>
+    <%= label_tag :status, "Update ticket status" %>
+    <%= select('', :status, %w(new blocked in_progress fixed), {include_blank: 'Do Not Change'}) %>
+  </div>
   <%= f.submit (@comment.new_record? ? 'Create Comment' : 'Update Comment') %>
   <span>or</span>
   <%= link_to 'Cancel', ticket_path(@ticket) %>

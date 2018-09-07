@@ -1,6 +1,8 @@
 <div id='tickets-wrapper'>
   <%= render 'shared/content_title', title: 'Tickets' %>
 
+  ########### filters ###########
+
   <%= form_tag('/tickets', method: 'get') do %>
     <span>Show tickets from </span>
 
@@ -15,9 +17,11 @@
     <%= collection_select('', :tag, Tag.all, :id, :name, {include_blank: '-', selected: @tag})%>
 
     <%= submit_tag 'Update', name: '' %>
-    
+
     <%= link_to 'Clear Filters', tickets_path %>
   <% end %>
+  
+  ###############################
 
   <%= render 'ticket_table', tickets: @tickets %>
   <%= link_to 'New Ticket', new_ticket_path %>

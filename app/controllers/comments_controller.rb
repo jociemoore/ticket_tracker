@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
     @comment = @ticket.comments.build(comment_params)
     @comment.creator = current_user
 
+    @ticket.update({status: params[:status]}) if !params[:status].empty?
+
     if @comment.save
       flash["notice"] = "Comment was successfully created."
       redirect_to ticket_path(params[:ticket_id])
