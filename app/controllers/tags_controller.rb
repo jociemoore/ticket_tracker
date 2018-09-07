@@ -4,6 +4,7 @@ class TagsController < ApplicationController
 
   def index
     @tags = Tag.all
+    @ticket_totals = Tag.ticket_totals
   end
 
   def new
