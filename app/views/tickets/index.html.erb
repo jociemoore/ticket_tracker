@@ -1,7 +1,7 @@
 <div id='tickets-wrapper'>
   <%= render 'shared/content_title', title: 'Tickets' %>
 
-  ########### filters ###########
+  <!-- Filters -->
 
   <%= form_tag('/tickets', method: 'get') do %>
     <span>Show tickets from </span>
@@ -20,8 +20,8 @@
 
     <%= link_to 'Clear Filters', tickets_path %>
   <% end %>
-  
-  ###############################
+
+  <!-- End -->
 
   <%= render 'ticket_table', tickets: @tickets %>
   <%= link_to 'New Ticket', new_ticket_path %>
