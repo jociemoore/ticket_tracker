@@ -5,7 +5,7 @@
     <%= f.collection_select(:project_id, Project.all, :id, :name) %>
   </div>
   <div>
-    <%= f.label :name %>
+    <%= f.label :name, class: (error_field?(:name, @ticket) ? 'alert-error' : '') %>
     <%= f.text_field :name %>
   </div>
   <div>

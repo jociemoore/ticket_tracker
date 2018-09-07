@@ -1,7 +1,7 @@
 <%= render 'shared/errors', obj: @project %>
 <%= form_for @project do |f| %>
   <div>
-    <%= f.label :name %>
+    <%= f.label :name, class: (error_field?(:name, @project) ? 'alert-error' : '') %>
     <%= f.text_field :name %>
   </div>
   <div>

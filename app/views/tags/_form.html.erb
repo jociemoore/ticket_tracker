@@ -1,7 +1,7 @@
 <%= render 'shared/errors', obj: @tag %>
 <%= form_for @tag do |f| %>
   <div>
-    <%= f.label :name %>
+    <%= f.label :name, class: (error_field?(:name, @tag) ? 'alert-error' : '') %>
     <%= f.text_field :name %>
   </div>
   <%= f.submit (@tag.new_record? ? 'Create Tag' : 'Update Tag') %>

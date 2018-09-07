@@ -1,7 +1,7 @@
 <%= render 'shared/errors', obj: @comment %>
 <%= form_for [@ticket, @comment] do |f| %>
   <div>
-    <%= f.label :body, "Add a comment" %>
+    <%= f.label :body, "Add a comment", class: (error_field?(:body, @comment) ? 'alert-error' : '') %>
     <%= f.text_area :body, rows: 5 %>
   </div>
   <div>

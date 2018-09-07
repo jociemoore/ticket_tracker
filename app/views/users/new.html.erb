@@ -3,19 +3,19 @@
 
 <%= form_for @user do |f| %>
   <div>
-    <strong><%= f.label :name %></strong>
+    <%= f.label :name, class: (error_field?(:name, @user) ? 'alert-error' : '') %>
     <%= f.text_field :name %>
   </div>
   <div>
-    <strong><%= f.label :email %></strong>
+    <%= f.label :email, class: (error_field?(:email, @user) ? 'alert-error' : '') %>
     <%= f.email_field :email %>
   </div>
   <div>
-    <strong><%= f.label :password %></strong>
+    <%= f.label :password, class: (error_field?(:password, @user) ? 'alert-error' : '') %>
     <%= f.password_field :password %>
   </div>
   <div>
-    <strong><%= f.label :password_confirmation %></strong>
+    <%= f.label :password_confirmation, class: (error_field?(:password_confirmation, @user) ? 'alert-error' : '') %>
     <%= f.password_field :password_confirmation %>
   </div>
   <%= f.submit 'Create Account' %>
