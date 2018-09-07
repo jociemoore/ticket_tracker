@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_ticket, only: [:create, :edit, :update]
   before_action :set_comment, only: [:edit, :update]
+  before_action :require_login
 
   def create
     @comment = @ticket.comments.build(comment_params)
